@@ -97,16 +97,16 @@ class Block
     color = @field[y][x]
     @check_field[y][x] = true
 
-    if (x > 0) && (color == @field[y][x - 1]) && (@check_field[y][x - 1] == false)
+    if (x > 0) && (color == @field[y][x - 1]) && !(@check_field[y][x - 1])
       find_same(y,x - 1,pos)
     end
-    if (x < @width - 1) && (color == @field[y][x + 1]) && (@check_field[y][x + 1] == false)
+    if (x < @width - 1) && (color == @field[y][x + 1]) && !(@check_field[y][x + 1])
       find_same(y,x + 1,pos)
     end
-    if (y > 0) && (color == @field[y - 1][x]) && (@check_field[y - 1][x] == false)
+    if (y > 0) && (color == @field[y - 1][x]) && !(@check_field[y - 1][x])
       find_same(y - 1,x,pos)
     end
-    if (y < @height - 1) && (color == @field[y + 1][x]) && (@check_field[y + 1][x] == false)
+    if (y < @height - 1) && (color == @field[y + 1][x]) && !(@check_field[y + 1][x])
       find_same(y + 1,x,pos)
     end
 
